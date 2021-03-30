@@ -51,6 +51,16 @@ public class LijnStuk extends Vorm {
     }
 
     public String toString(){
-        return "Lijn: (" + startPunt.getX() + ", " + startPunt.getY() + ") - eindpunt: (" + eindPunt.getX() + ", " + eindPunt.getY() + ")";
+        return "Lijn: startpunt: (" + startPunt.getX() + ", " + startPunt.getY() + ") - eindpunt: (" + eindPunt.getX() + ", " + eindPunt.getY() + ")";
+    }
+
+    public String getOmhullende(){
+
+        int voorlaatste = eindPunt.getX() - startPunt.getX();
+        int laatste = eindPunt.getY() - startPunt.getY();
+
+        return toString() + "\n" +
+                "Omhullende: (" + startPunt.getX() + ", " + startPunt.getY() + ") - " + voorlaatste + " - " + laatste;
+
     }
 }

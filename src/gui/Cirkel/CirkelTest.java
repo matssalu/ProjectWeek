@@ -17,6 +17,7 @@ public class CirkelTest {
     private Punt andereMiddelpunt;
     private int andereStraal;
     private int zelfdeStraal;
+    private Punt omhullendemidden;
 
 
     @Before
@@ -30,6 +31,7 @@ public class CirkelTest {
         this.andereMiddelpunt = new Punt(6, 11);
         this.zelfdeStraal = 5;
         this.andereStraal = 8;
+        this.omhullendemidden = new Punt(200, 200);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -82,6 +84,15 @@ public class CirkelTest {
         Cirkel cirkel1 = new Cirkel(geldigeMiddelpunt, geldigeStraal);
         Cirkel cirkel2 = new Cirkel(geldigeMiddelpunt, andereStraal);
         assertFalse(cirkel1.equals(cirkel2));
+    }
+
+    @Test
+    public void equals_omhullendde_test() {
+        Cirkel cirkel1 = new Cirkel(omhullendemidden, 20);
+        String temp = "Cirkel: middelPunt: (200, 200) - straal: 20" + "\n" +
+                "Omhullende: (180, 180) - 40 - 40";
+
+        assertEquals(temp, cirkel1.getOmhullende());
     }
 
 }
