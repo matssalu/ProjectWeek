@@ -2,7 +2,7 @@ package gui.Driehoek;
 
 import static org.junit.Assert.*;
 
-import gui.Lijnstuk.DomainException;
+import gui.Driehoek.DomainException;
 import gui.Punt.Punt;
 
 import org.junit.Test;

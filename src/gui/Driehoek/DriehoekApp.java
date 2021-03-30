@@ -1,2 +1,5 @@
-package gui.Driehoek;public class DriehoekApp {
+package gui.Driehoek;
+
+public class DriehoekApp {
+
 }
