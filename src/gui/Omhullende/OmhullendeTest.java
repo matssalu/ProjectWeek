@@ -84,4 +84,29 @@ public class OmhullendeTest {
     public void equals_moet_false_teruggeven_als_parameter_null(){
         assertFalse(omhullende.equals(null));
     }
+
+    @Test
+    public void maximum_Y_test(){
+        Omhullende test = new Omhullende(linkerBovenhoek, 30, 50);
+        assertEquals(250 , test.getMaximumY());
+    }
+
+    @Test
+    public void maximum_X_test(){
+        Omhullende test = new Omhullende(linkerBovenhoek, 30, 50);
+        assertEquals(230 , test.getMaximumX());
+    }
+
+    @Test
+    public void minimum_Y_test(){
+        Omhullende test = new Omhullende(linkerBovenhoek, 30, 50);
+        assertEquals(200 , test.getMinimumY());
+    }
+
+    @Test
+    public void minimum_X_test(){
+        Omhullende test = new Omhullende(linkerBovenhoek, 30, 50);
+        assertEquals(200 , test.getMinimumX());
+    }
+
 }

@@ -32,6 +32,22 @@ public class Omhullende {
         return this.breedte;
     }
 
+    public int getMinimumX(){
+        return positieLinksBoven.getX();
+    }
+
+    public int getMaximumX(){
+        return positieLinksBoven.getX() + breedte;
+    }
+
+    public int getMinimumY(){
+        return positieLinksBoven.getY();
+    }
+
+    public int getMaximumY(){
+        return positieLinksBoven.getY() + hoogte;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
