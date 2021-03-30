@@ -45,6 +45,4 @@ public class LijnStukTest {
         assertFalse(lijnStuk.equals(null));
     }
 
-    private class DomainException extends Throwable {
-    }
 }

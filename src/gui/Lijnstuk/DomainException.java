@@ -1,10 +1,8 @@
 package gui.Lijnstuk;
-import static java.lang.System.exit;
 
-public class DomainException extends Exception {
+public class DomainException extends RuntimeException {
 
     public DomainException(String ErrorMessage){
         super(ErrorMessage);
-        exit(0);
     }
 }

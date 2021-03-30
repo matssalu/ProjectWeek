@@ -1,15 +1,17 @@
 package gui.Lijnstuk;
 import gui.Punt.Punt;
 
+import java.util.Objects;
+
 public class LijnStuk {
 
     private Punt startPunt;
     private Punt eindPunt;
 
     public LijnStuk(Punt startPunt, Punt eindPunt) {
-        setStartEinde(startPunt, eindPunt);
         setStartPunt(startPunt);
         setEindpunt(eindPunt);
+        setStartEinde(startPunt, eindPunt);
     }
 
     private void setStartPunt(Punt startPunt) {
@@ -23,7 +25,7 @@ public class LijnStuk {
     }
 
     private void setStartEinde(Punt startPunt, Punt eindPunt) {
-        if(startPunt == null || eindPunt == null || startPunt.toString() == eindPunt.toString()) throw new IllegalArgumentException("Punten mogen niet gelijk aan elkaar zijn!");
+        if(startPunt.equals(eindPunt)) throw new IllegalArgumentException("Punten mogen niet gelijk aan elkaar zijn!");
     }
 
     public Punt getStartPunt() {
@@ -34,9 +36,17 @@ public class LijnStuk {
         return this.eindPunt;
     }
 
-    public boolean equals(LijnStuk andere){
-        if(this == andere) return true;
-        return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LijnStuk lijnStuk = (LijnStuk) o;
+        return Objects.equals(startPunt, lijnStuk.startPunt) && Objects.equals(eindPunt, lijnStuk.eindPunt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(startPunt, eindPunt);
     }
 
     public String toString(){

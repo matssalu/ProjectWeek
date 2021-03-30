@@ -1,5 +1,7 @@
 package gui.Punt;
 
+import java.util.Objects;
+
 public class Punt {
 
     private int X;
@@ -26,9 +28,17 @@ public class Punt {
         return this.Y;
     }
 
-    public boolean equals(Punt andere){
-        if(this == andere) return true;
-        return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Punt punt = (Punt) o;
+        return X == punt.X && Y == punt.Y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(X, Y);
     }
 
     public String toString(){
