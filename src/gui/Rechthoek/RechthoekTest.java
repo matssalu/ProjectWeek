@@ -6,13 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class RechthoekTest {
-    private Punt linkerBovenhoek;
+    private Punt linkerBovenhoek, linkerBovenhoek2;
     private int breedte, hoogte;
     private Rechthoek rechthoek;
 
     @Before
     public void setUp() {
         linkerBovenhoek = new Punt(200, 200);
+        linkerBovenhoek2 = new Punt(100, 200);
         breedte = 20;
         hoogte = 40;
         rechthoek = new Rechthoek(linkerBovenhoek,breedte, hoogte);
@@ -80,5 +81,13 @@ public class RechthoekTest {
     @Test
     public void equals_moet_false_teruggeven_als_parameter_null(){
         assertFalse(rechthoek.equals(null));
+    }
+
+    @Test
+    public void equals_omhullende_van_rechthoek(){
+        Rechthoek hoek = new Rechthoek(linkerBovenhoek2, 200, 180);
+        String temp = "Rechthoek: linkerbovenhoek: (100, 200) - breedte: 200 - hoogte: 180\n" +
+                        "Omhullende: (100, 200) - 200 - 180";
+        assertEquals(temp, hoek.getOmhullende());
     }
 }
