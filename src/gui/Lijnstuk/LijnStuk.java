@@ -13,12 +13,12 @@ public class LijnStuk {
     }
 
     private void setStartPunt(Punt startPunt) {
-        if(startPunt == null) throw new ("startpunt mag niet null zijn!");
+        if(startPunt == null) throw new DomainException("startpunt mag niet null zijn!");
         this.startPunt = startPunt;
     }
 
     private void setEindpunt(Punt eindPunt) {
-        if(eindPunt == null) throw new IllegalArgumentException("eindpunt mag niet null zijn!");
+        if(eindPunt == null) throw new DomainException("eindpunt mag niet null zijn!");
         this.eindPunt = eindPunt;
     }
 
