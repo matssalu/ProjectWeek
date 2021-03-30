@@ -1,10 +1,13 @@
 package gui.Driehoek;
 
 import gui.Punt.Punt;
+import gui.Vorm.Vorm;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
-public class Driehoek {
+public class Driehoek extends Vorm {
 
     private Punt punt1;
     private Punt punt2;
@@ -48,16 +51,23 @@ public class Driehoek {
     }
 
 
-    private boolean liggenOp1Lijn(Punt punt1, Punt punt2, Punt punt3){
+    public boolean liggenOp1Lijn(Punt punt1, Punt punt2, Punt punt3){
         int links = (punt2.getX() - punt1.getX()) * (punt3.getY() - punt1.getY());
         int rechts = (punt3.getX() - punt1.getX()) * (punt2.getY() - punt1.getY());
 
-        if(links == rechts) return false;
-        return true;
+        if(links == rechts) return true;
+        return false;
     }
 
-    private void sorteerHoekPunten(){
-
+    public String sorteerHoekPunten(){
+        ArrayList<Punt> punten = new ArrayList<>();
+        punten.add(punt1);
+        punten.add(punt2);
+        punten.add(punt3);
+        Collections.sort(punten);
+        this.punt1 = punten.get(0);
+        this.punt2 = punten.get(1);
+        this.punt3 = punten.get(2);
+        return punt1.getX() + ", " + punt1.getY() + "\n" + punt2.getX() + ", " + punt2.getY() + "\n" + punt3.getX() + ", " + punt3.getY();
     }
-
 }

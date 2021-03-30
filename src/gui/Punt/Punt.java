@@ -2,7 +2,7 @@ package gui.Punt;
 
 import java.util.Objects;
 
-public class Punt {
+public class Punt implements Comparable<Punt> {
 
     private int X;
     private int Y;
@@ -45,5 +45,12 @@ public class Punt {
         return "(" + this.getX() + ", " + this.getY() + ")";
     }
 
+
+    @Override
+    public int compareTo(Punt o) {
+        if(this.getY() > o.getY() && this.getX() > o.getX()) return 1;
+        if(this.getY() < o.getY() && this.getX() < o.getX()) return -1;
+        return 0;
+    }
 
 }

@@ -1,10 +1,11 @@
 package gui.Rechthoek;
 
 import gui.Punt.Punt;
+import gui.Vorm.Vorm;
 
 import java.util.Objects;
 
-public class Rechthoek {
+public class Rechthoek extends Vorm {
     private int breedte;
     private int hoogte;
     private Punt linkerBovenHoek;

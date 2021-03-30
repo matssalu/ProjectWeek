@@ -1,9 +1,10 @@
 package gui.Lijnstuk;
 import gui.Punt.Punt;
+import gui.Vorm.Vorm;
 
 import java.util.Objects;
 
-public class LijnStuk {
+public class LijnStuk extends Vorm {
 
     private Punt startPunt;
     private Punt eindPunt;

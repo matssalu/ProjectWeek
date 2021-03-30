@@ -18,6 +18,15 @@ public class DriehoekTest {
     private Punt zelfdeAlsPunt3 = new Punt(190, 30);
     private Punt verschillendVanPunt3 = new Punt(120, 100);
 
+    private Punt puntA = new Punt(10, 20);
+    private Punt puntB = new Punt(10, 30);
+    private Punt puntC = new Punt(10, 40);
+
+    private Punt puntF = new Punt(1, 5);
+    private Punt puntE = new Punt(6, 11);
+    private Punt puntD = new Punt(12, 20);
+    private boolean temp2;
+
     @Test
     public void Driehoek_moet_DrieHoek_aanmaken_met_gegeven_hoekpunten() {
         Driehoek drieHoek = new Driehoek(punt1, punt2, punt3);
@@ -69,4 +78,24 @@ public class DriehoekTest {
         assertFalse(drieHoek.equals(null));
     }
 
+    @Test
+    public void drie_punten_liggen_op_1_lijn_geeft_true(){
+        Driehoek drieHoek = new Driehoek(puntA, puntB, puntC);
+        assertTrue(drieHoek.liggenOp1Lijn(puntA,puntB,puntC));
+    }
+
+    @Test
+    public void drie_punten_liggen_niet_op_1_lijn_geeft_false(){
+        Driehoek drieHoek = new Driehoek(punt1, punt2, punt3);
+        assertFalse(drieHoek.liggenOp1Lijn(punt1,punt2,punt3));
+    }
+
+    @Test
+    public void orderen_drie_punten_test_false(){
+        Driehoek drieHoek = new Driehoek(puntD, puntE, puntF);
+        String temp = puntF.getX() + ", " + puntF.getY() + "\n" + puntE.getX() + ", " + puntE.getY() + "\n" + puntD.getX() + ", " + puntD.getY();
+        temp2 = false;
+        if(drieHoek.sorteerHoekPunten() == temp) temp2 = true;
+        assertFalse(temp2);
+    }
 }
