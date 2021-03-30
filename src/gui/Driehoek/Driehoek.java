@@ -4,6 +4,7 @@ import gui.Punt.Punt;
 
 public class Driehoek {
     public Driehoek(Punt punt1, Punt punt2, Punt punt3) {
+        
     }
 
     public Punt getHoekPunt1() {
