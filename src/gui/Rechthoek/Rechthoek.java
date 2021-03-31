@@ -1,5 +1,6 @@
 package gui.Rechthoek;
 
+import gui.Omhullende.Omhullende;
 import gui.Punt.Punt;
 import gui.Vorm.Vorm;
 
@@ -50,7 +51,8 @@ public class Rechthoek extends Vorm {
         ") - breedte: " + this.breedte + " - hoogte: " + this.hoogte;
     }
 
-    public String getOmhullende(){
-        return toString() + "\n" + "Omhullende: (" + linkerBovenHoek.getX() + ", " + linkerBovenHoek.getY() + ") - " + breedte + " - " + hoogte;
+    public Omhullende getOmhullende(){
+        Omhullende a = new Omhullende(linkerBovenHoek,breedte,hoogte);
+        return a;
     }
 }

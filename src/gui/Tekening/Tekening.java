@@ -1,5 +1,6 @@
 package gui.Tekening;
 
+import gui.Vorm.VormMakenApp;
 import gui.Vorm.Vorm;
 
 import java.util.ArrayList;
@@ -13,22 +14,22 @@ public class Tekening {
     public int MIN_Y;
     public int MAX_Y;
 
+
     public Tekening(String naam){
         if (naam == null) throw new IllegalArgumentException("de tekening moet een naam hebben");
         if (naam.contains(" "))throw new IllegalArgumentException("in de naam mogen er geen spaties staan");
-        if (vormen > 0) throw new IllegalArgumentException("er mogen nog geen vormen gegeven zijn");
+        if (vormen.size() > 0)throw new IllegalArgumentException("er mogen nog geen vormen gegeven zijn");
         this.vormen = vormen;
         this.naam = naam;
 
     }
-    public boolean isValidNaam(String naam){
-        if(naam == null)
-        return false;
-
+    public static boolean isValidNaam(String naam){
+        if(naam == null)return false;
         return true;
     }
 
-    public String getNaam() {
+    public String getNaam()
+    {
         return this.naam;
     }
 
@@ -37,7 +38,7 @@ public class Tekening {
     }
 
     public Vorm getVorm(int vormen){
-
+        return vormen;
     }
 
     public int getAantalVormen() {
@@ -49,7 +50,10 @@ public class Tekening {
     }
 
     public boolean bevat(Vorm vormen) {
-        if()
+        if(vorm1 = vorm2)
+            return false;
+
+        return true;
     }
 
     @Override
@@ -76,4 +80,8 @@ public class Tekening {
                 ", MAX_Y=" + MAX_Y +
                 '}';
     }
+    public static final int MIN_X = 0;public static final int MIN_Y = 0;
+
+    public static final int MAX_X = 399; public static final int MAX_Y =
+            399;
 }

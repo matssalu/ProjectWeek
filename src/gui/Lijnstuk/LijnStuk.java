@@ -1,4 +1,5 @@
 package gui.Lijnstuk;
+import gui.Omhullende.Omhullende;
 import gui.Punt.Punt;
 import gui.Vorm.Vorm;
 
@@ -54,13 +55,17 @@ public class LijnStuk extends Vorm {
         return "Lijn: startpunt: (" + startPunt.getX() + ", " + startPunt.getY() + ") - eindpunt: (" + eindPunt.getX() + ", " + eindPunt.getY() + ")";
     }
 
-    public String getOmhullende(){
+    public Omhullende getOmhullende(){
+        Punt punt= new Punt(Math.min(startPunt.getX(),eindPunt.getX()), Math.min(startPunt.getY(),eindPunt.getY()));
+        Omhullende a = new Omhullende(punt,Math.abs((startPunt.getX()-eindPunt.getX())),Math.abs((startPunt.getY()-eindPunt.getY())));
+        return a;
+    }
 
-        int voorlaatste = eindPunt.getX() - startPunt.getX();
-        int laatste = eindPunt.getY() - startPunt.getY();
+    public void setStartEnEindPunt(Punt punt1, Punt punt2) {
+        if (punt1 == punt2 || punt1 == null || punt2 == null)
+            throw new DomainException("error");
 
-        return toString() + "\n" +
-                "Omhullende: (" + startPunt.getX() + ", " + startPunt.getY() + ") - " + voorlaatste + " - " + laatste;
-
+        this.startPunt = punt1;
+        this.eindPunt = punt2;
     }
 }

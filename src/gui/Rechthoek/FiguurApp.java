@@ -1,4 +1,4 @@
-package gui.Rechthoek;
+/*package gui.Rechthoek;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,4 +28,4 @@ public class FiguurApp {
             }
         });
     }
-}
+}*/

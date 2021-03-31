@@ -1,5 +1,6 @@
 package gui.Cirkel;
 
+import gui.Omhullende.Omhullende;
 import gui.Punt.Punt;
 import gui.Vorm.Vorm;
 
@@ -41,12 +42,13 @@ public class Cirkel extends Vorm {
         return "Cirkel: middelPunt: (" + this.middelpunt.getX() + ", " + this.middelpunt.getY() +") - straal: " + getRadius();
     }
 
-    public String getOmhullende(){
+    public Omhullende getOmhullende(){
         int diameter = radius * 2;
         int puntX = middelpunt.getX() - radius;
         int puntY = middelpunt.getY() - radius;
-        return toString() + "\n" +
-                "Omhullende: (" + puntX + ", " + puntY + ") - " + diameter + " - " + diameter;
+        Punt punt= new Punt (puntX, puntY);
+        Omhullende a = new Omhullende(punt,diameter,diameter);
+        return a;
     }
 
 }

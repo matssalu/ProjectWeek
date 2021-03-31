@@ -60,4 +60,8 @@ public class Omhullende {
     public int hashCode() {
         return Objects.hash(positieLinksBoven, breedte, hoogte, omhullende);
     }
+
+    public String toString(){
+        return "Omhullende: " + getLinkerBovenhoek().toString() + " - " + getBreedte() + " - " + getHoogte();
+    }
 }

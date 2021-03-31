@@ -1,5 +1,6 @@
 package gui.Driehoek;
 
+import gui.Omhullende.Omhullende;
 import gui.Punt.Punt;
 import gui.Vorm.Vorm;
 
@@ -70,4 +71,13 @@ public class Driehoek extends Vorm {
         this.punt3 = punten.get(2);
         return punt1.getX() + ", " + punt1.getY() + "\n" + punt2.getX() + ", " + punt2.getY() + "\n" + punt3.getX() + ", " + punt3.getY();
     }
+
+    public Omhullende getOmhullende(){
+        Punt punt= new Punt(Math.min(Math.min(punt1.getX(),punt2.getX()), punt3.getX()), Math.min(Math.min(punt1.getY(),punt2.getY()), punt3.getY()));
+        int punt2breedte= Math.max(Math.max(punt1.getX(), punt2.getX()),punt3.getX());
+        int punt3hoogte= Math.max(Math.max(punt1.getY(), punt2.getY()),punt3.getY());
+        Omhullende a = new Omhullende(punt,punt2breedte-punt.getX(), punt3hoogte-punt.getY());
+        return a;
+    }
+
 }

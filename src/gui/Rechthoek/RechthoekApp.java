@@ -2,6 +2,8 @@ package gui.Rechthoek;
 
 import gui.Cirkel.Cirkel;
 import gui.Punt.Punt;
+import gui.Tekening.Tekening;
+import gui.Vorm.Vorm;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -14,8 +16,9 @@ public class RechthoekApp {
     private Alert foutenboodschap = new Alert(Alert.AlertType.WARNING);
     private Rechthoek vier;
     private Punt punt;
+    private Vorm vorm;
 
-    public RechthoekApp(GridPane root) {
+    public RechthoekApp(GridPane root, Tekening tekening) {
 
         invoerXLabel =  new Label("Geef de x-coordinaat van de rechterbovenhoek");
         invoerX= new TextField();
@@ -73,11 +76,13 @@ public class RechthoekApp {
             }
         });
 
-        invoerH.setOnAction(eventIngaveY -> {
+        invoerH.setOnAction(eventIngaveH -> {
             try {
                 punt = new Punt(Integer.parseInt(invoerX.getText()), Integer.parseInt(invoerY.getText()));
                 vier = new Rechthoek(punt ,Integer.parseInt(invoerB.getText()), Integer.parseInt(invoerH.getText()));
+
                 root.getChildren().clear();
+                tekening.voegToe(vier);
 
                 Text uitvoer = new Text();
                 uitvoer.setText(vier.toString());
