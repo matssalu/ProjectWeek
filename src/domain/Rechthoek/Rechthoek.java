@@ -3,7 +3,7 @@ package domain.Rechthoek;
 import domain.Omhullende.Omhullende;
 import domain.Punt.Punt;
 import domain.Vorm.Drawable;
-import domain.Vorm.Vorm;
+import domain.Speler.Vorm;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;

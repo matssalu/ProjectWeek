@@ -9,7 +9,7 @@ import domain.Driehoek.Driehoek;
 import domain.Lijnstuk.LijnStuk;
 import domain.Punt.Punt;
 import domain.Rechthoek.Rechthoek;
-import domain.Vorm.Vorm;
+import domain.Speler.Vorm;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -14,7 +14,7 @@ public class FxTekeningApp extends Application {
         Scene scene = new Scene(root);
         new TekeningApp(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Almost hangman :) ");
+        primaryStage.setTitle("Almost hangman");
         primaryStage.show();
     }
 

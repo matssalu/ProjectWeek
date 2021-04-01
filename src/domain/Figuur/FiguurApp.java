@@ -23,7 +23,7 @@ public class FiguurApp {
                     new CirkelApp(root);
 
                 } else if (keuzeMenu.getValue().equals("Rechthoek")) {
-                    /*new RechthoekApp(root);*/
+
                 }
 
             }

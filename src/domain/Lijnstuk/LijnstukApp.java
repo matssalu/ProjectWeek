@@ -1,9 +1,8 @@
 package domain.Lijnstuk;
 
-import domain.*;
 import domain.Punt.Punt;
 import domain.Tekening.Tekening;
-import domain.Vorm.Vorm;
+import domain.Speler.Vorm;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

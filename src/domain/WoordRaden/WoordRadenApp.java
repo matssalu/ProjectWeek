@@ -5,14 +5,11 @@ import domain.Speler.Speler;
 import domain.Tekening.DomainException;
 import domain.WoordenLijst.WoordenLijst;
 import domain.db.WoordenLezer;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import domain.db.WoordenLezer;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class WoordRadenApp {
     private Label invoerStartLabel, invoerLabel, raadLabel, progressLabel, foutLabel, woordLabel, succesLabel;
@@ -20,11 +17,19 @@ public class WoordRadenApp {
     private boolean status;
     private WoordenLijst woorden;
     private int nummer;
+    private WoordenLijst lijst = new WoordenLijst();
+
+    private HintWoord setWoord(){
+        String path = "src/domain/db/hangman.txt";
+        WoordenLezer.setWoorden(lijst,path);
+        HintWoord woord = new HintWoord(lijst.getRandomWoord());
+        return woord;
+    }
+    
 
     public WoordRadenApp(GridPane root, Speler speler) throws IOException {
 
-        this.woorden = new WoordenLijst();
-        HintWoord woord = new HintWoord(woorden.getRandomWoord());
+        HintWoord woord = this.setWoord();
 
         invoerStartLabel =  new Label("Geef je gok: ");
         invoerStartChar= new TextField();
@@ -78,7 +83,7 @@ public class WoordRadenApp {
             root.getRowConstraints().clear();
             root.getChildren().clear();
 
-            succesLabel = new Label("Goed gedaan " + speler.getNaam() + " Je hebt het woord geraden in " + nummer + " beurten!");
+            succesLabel = new Label("Goed gedaan " + speler.getNaam() + " Je hebt het" + woord.toString() + "geraden in " + nummer + " beurten!");
             root.add(succesLabel, 0,1);
         });
     }

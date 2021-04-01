@@ -9,9 +9,7 @@ public class WoordenLijst {
 
     private ArrayList<String> woorden = new ArrayList<>();
 
-    public WoordenLijst(){
-
-    }
+    public WoordenLijst(){ }
 
     public void voegToe(String woord) {
         if(woord == null) throw new DomainException("woord is null");
@@ -20,9 +18,7 @@ public class WoordenLijst {
         woorden.add(woord);
     }
 
-    public int getAantalWoorden() {
-        return woorden.size();
-    }
+    public int getAantalWoorden() { return woorden.size(); }
 
     public String getRandomWoord(){
         if(woorden.size() == 0) return null;
@@ -31,5 +27,7 @@ public class WoordenLijst {
         return woorden.get(number);
 
     }
+
+    public ArrayList<String> getDb(){ return woorden; }
 
 }

@@ -2,12 +2,11 @@ package domain.Rechthoek;
 
 import domain.Punt.Punt;
 import domain.Tekening.Tekening;
-import domain.Vorm.Vorm;
+import domain.Speler.Vorm;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Text;
 
 public class RechthoekApp {
     private Label invoerXLabel, invoerYLabel, invoerBLabel, invoerHLabel;

@@ -1,6 +1,7 @@
-package domain.Vorm;
+package domain.Speler;
 import domain.Omhullende.Omhullende;
 import domain.Punt.Punt;
+import domain.Vorm.Drawable;
 import javafx.scene.paint.Color;
 
 public abstract class Vorm  implements Drawable {
