@@ -69,6 +69,8 @@ public class LijnStuk extends Vorm implements Drawable {
         return a;
     }
 
+
+
     public void setStartEnEindPunt(Punt punt1, Punt punt2) {
         if (punt1 == punt2 || punt1 == null || punt2 == null)
             throw new DomainException("error");

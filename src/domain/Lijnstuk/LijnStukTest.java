@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import domain.Omhullende.Omhullende;
 import domain.Punt.Punt;
 import org.junit.Test;
 
@@ -48,11 +49,12 @@ public class LijnStukTest {
 
     @Test
     public void equals_omhullendde_test() {
-        LijnStuk lijnStuk = new LijnStuk(puntA, puntB);
-        String temp = "Lijn: startpunt: (100, 150) - eindpunt: (200, 250)" + "\n" +
-                "Omhullende: (100, 150) - 100 - 100";
+        LijnStuk lijnstuk = new LijnStuk(punt1, punt2);
 
-        assertEquals(temp, lijnStuk.getOmhullende());
+        Omhullende omhullende = lijnstuk.getOmhullende();
+        assertEquals(new Punt(10, 20), omhullende.getLinkerBovenhoek());
+        assertEquals(180, omhullende.getBreedte());
+        assertEquals(10, omhullende.getHoogte());
     }
 
 }

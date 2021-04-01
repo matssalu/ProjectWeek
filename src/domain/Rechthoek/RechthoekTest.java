@@ -1,6 +1,7 @@
 package domain.Rechthoek;
 import static org.junit.Assert.*;
 
+import domain.Omhullende.Omhullende;
 import domain.Punt.Punt;
 import org.junit.Before;
 import org.junit.Test;
@@ -85,9 +86,9 @@ public class RechthoekTest {
 
     @Test
     public void equals_omhullende_van_rechthoek(){
-        Rechthoek hoek = new Rechthoek(linkerBovenhoek2, 200, 180);
-        String temp = "Rechthoek: linkerbovenhoek: (100, 200) - breedte: 200 - hoogte: 180\n" +
-                        "Omhullende: (100, 200) - 200 - 180";
-        assertEquals(temp, hoek.getOmhullende());
+        Omhullende omhullende = rechthoek.getOmhullende();
+        assertEquals(rechthoek.getLinkerBovenhoek(), omhullende.getLinkerBovenhoek());
+        assertEquals(rechthoek.getBreedte(), omhullende.getBreedte());
+        assertEquals(rechthoek.getHoogte(), omhullende.getHoogte());
     }
 }
